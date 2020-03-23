@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 3</title>
+    <style>
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table{
+    border: 1px solid black;}
+  td {
+    border-bottom: 1px solid #ddd;
+padding: 5px;}
+th {
+    border-bottom: 1px solid #ddd;
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+}
+    </style>
+</head>
+<body>
+
+<h1 align="center">Welcome to the Gutenberg e-Book Library</h1>
+<h3 align="center"><a href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://127.0.0.1:5003/notes/all">Note Retrieval</a></h3>
+
+<!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% if shownotes == 'false' %}
+<form class="example" style="margin:auto;max-width:300px" method="post">
+    <input type="text" placeholder="Search.." name="keyword">
+    <button type="submit" formaction="/submit"><i class="fa fa-search"></i></button>
+</form>
+{% endif %}
+
+{% if shownotes == 'true' %}
+<form class="example" style="margin:auto;max-width:400px" method="post">
+    <input type="text" value='{{ keyword }}' name="keyword" readonly>
+    <input type="text" placeholder="Enter Notes.." name="notes">
+    <button type="submit" formaction="http://127.0.0.1:5003/notes/add"><i class="fa fa-check"></i></button>
+</form>
+{% endif %}
+
+{% if showtable == 'true' %}
+<br/>
+<hr/>
+<table align="center">
+    <thead>
+        <tr>
+            <th>Book</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    {% for x in test: %}
+    <tr>
+        <td> {{x.book_name}} </td>
+        <td> {{x.author}} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% if showtable == 'false' %}
+<br/>
+<hr/>
+<p align="center"> No records found </p>
+{% endif %}
+
+</body>
+</html>

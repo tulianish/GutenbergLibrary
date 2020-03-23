@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 3</title>
+    <style>
+body {
+  font-family: Arial;
+}
+
+</style>
+</head>
+<body>
+
+<h1 align="center">Welcome to the Library Notekeeping</h1>
+<h3 align="center"><a href="http://127.0.0.1:5000/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/notes/all">Note Retrieval</a></h3>
+
+{% for x in result %}
+<h3>{{ x.keyword }}</h3>
+<ul>
+    {% for value in x.notes %}
+    <li>{{ value.note }}</li>
+    {% endfor %}
+</ul>
+{% endfor %}
+
+
+</body>
+</html>
