@@ -13,8 +13,8 @@ def Home():
 def MainHandler():
     keyword = request.form['keyword']
     print(keyword)
-    logFlag = requests.get("http://127.0.0.1:5001/logs/" + keyword)
-    CatalogueService = requests.get("http://127.0.0.1:5002/catalogue/" + keyword)
+    logFlag = requests.get("http://35.171.85.141:5001/logs/" + keyword)
+    CatalogueService = requests.get("http://35.171.85.141:5002/catalogue/" + keyword)
 
     if CatalogueService.text == '0':
         showtable = 'false'

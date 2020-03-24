@@ -60,7 +60,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <body>
 
 <h1 align="center">Welcome to the Gutenberg e-Book Library</h1>
-<h3 align="center"><a href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://127.0.0.1:5003/notes/all">Note Retrieval</a></h3>
+<h3 align="center"><a href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://35.171.85.141:5003/notes/all">Note Retrieval</a></h3>
 
 <!-- Load icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -76,7 +76,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <form class="example" style="margin:auto;max-width:400px" method="post">
     <input type="text" value='{{ keyword }}' name="keyword" readonly>
     <input type="text" placeholder="Enter Notes.." name="notes">
-    <button type="submit" formaction="http://127.0.0.1:5003/notes/add"><i class="fa fa-check"></i></button>
+    <button type="submit" formaction="http://35.171.85.141:5003/notes/add"><i class="fa fa-check"></i></button>
 </form>
 {% endif %}
 

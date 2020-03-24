@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 # MongoDB connector
-mongo_client = pymongo.MongoClient("mongodb://localhost:27017/")
+mongo_client = pymongo.MongoClient("mongodb://35.171.85.141:27017/")
 mongo_db_name = mongo_client["gutenberg"]
 collection = mongo_db_name["logs"]
 
